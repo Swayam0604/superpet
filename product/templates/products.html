@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block title %}Products{% endblock %}
+ {% block content %}
+<h1>This is the Products page</h1>
+<div class="row">
+  <div class="col-3">
+    <div class="list-group">
+      <a href="{% url 'product' %}?sp=0&ep=500" class="list-group-item list-group-item-action"
+        >0 to 500</a
+      >
+      <a href="{% url 'product' %}?sp=501&ep=999 " class="list-group-item list-group-item-action"
+        >500 to 1000</a
+      >
+      <a href="{% url 'product' %}?sp=1000&ep=9999 " class="list-group-item list-group-item-action"
+        >Greater Than 1000</a
+      >
+    </div>
+    <p>Brands</p>
+    <div class="list-group mt-3">
+      <a href="{% url 'product' %}?brand=superpet" class="list-group-item list-group-item-action"
+        >superpet</a
+      >
+      <a href="{% url 'product' %}?brand=Jacob" class="list-group-item list-group-item-action"
+        >Jacob & Co.</a
+      >
+      <a href="{% url 'product' %}?brand=Patek Philippe" class="list-group-item list-group-item-action"
+        >Patek Philippe</a
+      >
+    </div>
+  </div>
+  <div class="col-9">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      {% for product in products %} {% include "productcard.html" with p=product %} {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

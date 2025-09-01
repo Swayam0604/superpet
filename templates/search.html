@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% block title %}Search{% endblock %}
+ {% block content %}
+<h1>Products</h1>
+
+<div class="row row-cols-1 row-cols-md-4 g-4">
+  {% for product in products %} {% include "productcard.html" with p=product%}
+
+  {% empty %}
+  <h3 class="bg-danger text-center text-white rounded p-3 m-4">No Products Found</h3
+  {% endfor %}
+</div>
+{% endblock %}

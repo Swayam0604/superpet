@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block title %}Register {% endblock %} 
+{% block content %}
+<h1>Regsiter</h1>
+<div class="container border border-primary m-3 p-3 register">
+    {% if message %}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>{{ message }}</strong> You should check in on some of those fields
+    below.
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+  {% endif %}
+  <h2 class="bg-dark text-white p-3 m-2" style="text-align: center">
+    User Registration Form
+  </h2>
+  <form method="post">
+    {% csrf_token %} {% comment %} {{form}} {% endcomment %} {% for i in form %}
+    <div class="mb-3">
+      {{i.label_tag}} {{i}}
+      <div id="emailHelp" class="form-text">{{i.errors}}</div>
+    </div>
+    {% endfor %}
+
+    <button class="btn btn-dark m-3" type="submit">Register</button>
+  </form>
+</div>
+{% endblock %}

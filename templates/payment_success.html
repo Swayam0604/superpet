@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Superpet - Payment Success{% endblock %}
+
+{% block content %}
+<h1>Payment Successful</h1>
+<p>Order ID: {{ order.order_id }}</p>
+<p>price : ₹{{ total }}</p>
+<p>Thank you for your purchase!</p>
+<p>Your order has been successfully placed.</p>
+{% endblock content %}

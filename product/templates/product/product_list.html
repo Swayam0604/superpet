@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}products_list{% endblock %}
+{% block content %}
+<h1>This is the Product list page</h1>
+
+<div class="row row-cols-1 row-cols-md-4 g-4">
+{% for product in object_list %}
+{% include "productcard.html" with p=product%}
+{% endfor %}
+</div>
+{% endblock %}

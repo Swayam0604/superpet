@@ -1,0 +1,43 @@
+<div class="col">
+  <div class="card-deck">
+    <div class="card">
+      <a
+        href="{% url 'product-details' p.id %}"
+        style="text-decoration: none; color: black"
+      >
+        <img src="{{p.product_image.url}}" class="card-img-top" alt="..." />
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">{{p.product_name}}</h5>
+        <p class="card-text">{{p.product_description}}</p>
+        <p class="card-text">{{p.product_price}}</p>
+
+        <form action="{% url 'add-to-cart' p.id %}">
+          <button
+            class="btn btn-primary m-3"
+            type="button"
+            onclick="updateQuantity({{p.id}},-1)"
+          >
+            -
+          </button>
+          <input
+            type="number"
+            value="1"
+            name="quantity"
+            id="quantity{{p.id}}"
+            min="1"
+            max="10"
+          />
+          <button
+            class="btn btn-primary m-3"
+            type="button"
+            onclick="updateQuantity({{p.id}},1)"
+          >
+            +
+          </button>
+          <button class="btn btn-primary m-3" type="submit">Add To Cart</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

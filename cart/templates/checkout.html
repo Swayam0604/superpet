@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Superpet - Checkout{% endblock %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+{% for fields in form %}
+<div class="mb-3">
+    {{fields.label_tag}}
+    {{fields}}
+</div>
+{% endfor %}
+<button class="btn btn-primary" type="submit">Checkout</button>
+</form>
+{% endblock content %}
