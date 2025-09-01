@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'superpet.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        "NAME": "superpet_424",
-        "USER": "root",
-        "PASSWORD": "root",
-        "HOST": "127.0.0.1",  #you can also write local host as well
+        "NAME": "Swayam0604$superpet",
+        "USER": "Swayam0604",
+        "PASSWORD": "Swara0228",
+        "HOST": "Swayam0604.mysql.pythonanywhere-services.com",  #you can also write local host as well
         "PORT": "3306",
     }
 }
