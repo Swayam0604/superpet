@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-iig01c#c0jo5fcf0x_@0a7*sz@ga-k=@904d9eve&nvuk#6rcl
 DEBUG = True
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["Swayam0604.pythonanywhere.com"]
 
 
 # Application definition
